@@ -71,7 +71,7 @@ def modelo_cstr(CAin, params):
 
 
 def simula_cstr(CA0=1.0, num_estagios=3, params=None):
-        """
+    """
     Simula uma série de reatores CSTR em cascata.
 
     Cada estágio recebe como entrada a concentração
