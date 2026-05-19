@@ -1,22 +1,33 @@
 from dataclasses import dataclass
 import numpy as np
 
-
 @dataclass
 class ParametrosCSTR:
     """
     Classe que armazena os parâmetros de um reator CSTR.
 
+    Condição nominal utilizada:
+    ----------------------------
+    - Vazão volumétrica: 50.0
+    - Volume do reator: 100.0
+    - Constante cinética: 0.5
+
+    Essa condição nominal será utilizada como padrão
+    caso o usuário não forneça outros valores.
+
     Atributos
     ---------
     vazao : float
-        Vazão volumétrica de alimentação [unid. volume/tempo].
+        Vazão volumétrica de alimentação
+        [unid. volume/tempo].
 
     volume : float
-        Volume do reator [unid. volume].
+        Volume do reator
+        [unid. volume].
 
     constante : float
-        Constante cinética de reação de primeira ordem [1/tempo].
+        Constante cinética de reação de primeira ordem
+        [1/tempo].
     """
 
     vazao: float = 50.0
@@ -60,32 +71,42 @@ def modelo_cstr(CAin, params):
 
 
 def simula_cstr(CA0=1.0, num_estagios=3, params=None):
-    """
+        """
     Simula uma série de reatores CSTR em cascata.
 
-    Cada estágio recebe como entrada a concentração de saída
-    do estágio anterior.
+    Cada estágio recebe como entrada a concentração
+    de saída do estágio anterior.
+
+    Condição nominal padrão:
+    -------------------------
+    Caso nenhum parâmetro seja fornecido, cada estágio
+    utilizará:
+
+    - F = 50.0
+    - V = 100.0
+    - k = 0.5
 
     Parâmetros
     ----------
     CA0 : float, opcional
-        Concentração inicial de alimentação do primeiro reator.
+        Concentração inicial de alimentação
+        do primeiro reator.
 
     num_estagios : int, opcional
         Número de reatores CSTR em série.
 
     params : list[ParametrosCSTR], opcional
         Lista contendo os parâmetros de cada estágio.
-        Caso não seja fornecida, todos os estágios utilizarão
-        parâmetros padrão.
 
     Retorna
     -------
     CA : ndarray
-        Vetor contendo as concentrações de saída de cada estágio.
+        Vetor contendo as concentrações de saída
+        de cada estágio.
 
     X : ndarray
-        Vetor contendo as conversões acumuladas em cada estágio.
+        Vetor contendo as conversões acumuladas
+        em cada estágio.
     """
 
     if params is None:
