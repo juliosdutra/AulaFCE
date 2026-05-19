@@ -19,8 +19,8 @@ class ParametrosCSTR:
         Constante cinética de reação de primeira ordem [1/tempo].
     """
 
-    vazao: float = 100.0
-    volume: float = 50.0
+    vazao: float = 50.0
+    volume: float = 100.0
     constante: float = 0.5
 
 
