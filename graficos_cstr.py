@@ -44,7 +44,9 @@ def grafico_cstr(CA, X):
 
     ax1.set_xlabel("Estágio")
 
-    ax1.set_ylabel(r"Concentração $C_A$")
+    ax1.set_ylabel(
+        r"Concentração $C_A$"
+    )
 
     ax1.set_title("CSTRs em Série")
 
@@ -74,10 +76,19 @@ def grafico_cstr(CA, X):
         100 * X,
         marker='o',
         linewidth=2,
-        color = 'red'
+        color='red'
     )
 
-    ax2.set_ylabel("Conversão (%)")
+    # Deixa o eixo da conversão vermelho
+    ax2.set_ylabel(
+        "Conversão (%)",
+        color='red'
+    )
+
+    ax2.tick_params(
+        axis='y',
+        colors='red'
+    )
 
     # Valores nos pontos
     for x, y in zip(estagios, 100 * X):
@@ -87,7 +98,8 @@ def grafico_cstr(CA, X):
             y,
             f"{y:.1f}%",
             ha='center',
-            va='bottom'
+            va='bottom',
+            color='red'
         )
 
     # ------------------------------------------------------
