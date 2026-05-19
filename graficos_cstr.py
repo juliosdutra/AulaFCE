@@ -37,10 +37,11 @@ def grafico_cstr(CA, X):
     # ------------------------------------------------------
 
     barras = ax1.bar(
-        estagios,
-        CA,
-        alpha=0.7
-    )
+    estagios,
+    CA,
+    alpha=0.6,
+    color='steelblue'
+)
 
     ax1.set_xlabel("Estágio")
 
@@ -51,6 +52,9 @@ def grafico_cstr(CA, X):
     ax1.set_title("CSTRs em Série")
 
     ax1.grid(True, axis='y')
+    
+    fig.patch.set_facecolor('white')
+    ax1.set_facecolor('#f7f7f7')
 
     # Valores nas barras
     for barra in barras:
@@ -72,23 +76,23 @@ def grafico_cstr(CA, X):
     ax2 = ax1.twinx()
 
     ax2.plot(
-        estagios,
-        100 * X,
-        marker='o',
-        linewidth=2,
-        color='red'
-    )
+    estagios,
+    100 * X,
+    marker='o',
+    linewidth=1.8,
+    color='firebrick'
+)
 
     # Deixa o eixo da conversão vermelho
     ax2.set_ylabel(
-        "Conversão (%)",
-        color='red'
-    )
+    "Conversão (%)",
+    color='firebrick'
+)
 
     ax2.tick_params(
-        axis='y',
-        colors='red'
-    )
+    axis='y',
+    colors='firebrick'
+)
 
     # Valores nos pontos
     for x, y in zip(estagios, 100 * X):
