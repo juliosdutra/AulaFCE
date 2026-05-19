@@ -73,7 +73,8 @@ def grafico_cstr(CA, X):
         estagios,
         100 * X,
         marker='o',
-        linewidth=2
+        linewidth=2,
+        color = 'red'
     )
 
     ax2.set_ylabel("Conversão (%)")
