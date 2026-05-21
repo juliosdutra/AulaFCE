@@ -92,7 +92,7 @@ def simula_aquecimento(tempo, T0=25.0, params=None):
         params = ParametrosAquecimento()
 
     sol = solve_ivp(
-        fun=lambda t,T: modelo_aquecimento(t, T, params),
+        lambda t,T: modelo_aquecimento(t, T, params),
         t_span=(tempo[0], tempo[-1]),
         y0=[T0],
         t_eval=tempo,
