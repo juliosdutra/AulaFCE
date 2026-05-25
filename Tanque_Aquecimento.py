@@ -94,7 +94,7 @@ def simula_aquecimento(tempo, T0=25.0, params=None):
     sol = solve_ivp(
         modelo_aquecimento,
         t_span=(tempo[0], tempo[-1]),
-        y0=T0,
+        y0=[T0],
         t_eval=tempo,
         args=(params,),
         method="BDF"
