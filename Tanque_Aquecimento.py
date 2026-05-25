@@ -97,7 +97,7 @@ def simula_aquecimento(tempo, T0=25.0, params=None):
         y0=[T0],
         t_eval=tempo,
         args=(params,),
-        method="RK45"
+        method="BDF"
     )
 
     return sol.t, sol.y[0]
