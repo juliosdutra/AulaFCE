@@ -62,7 +62,7 @@ def modelo_aquecimento(t, T, params):
     m = params.m
     Cp = params.Cp
 
-    dTdt = (U * A * (Tamb - T) + q) / (m * Cp)
+    dTdt = (q - U * A * (Tamb - T)) / (m * Cp)
 
     return dTdt
 
