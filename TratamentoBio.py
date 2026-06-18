@@ -14,11 +14,11 @@ class ParametrosBioreator:
 
     ## Atributos
 
-    - **Vmax_ref**: velocidade máxima de referência.
-    - **Km**: constante de Michaelis-Menten.
-    - **Ea**: energia de ativação.
-    - **R**: constante universal dos gases.
-    - **Tref**: temperatura de referência.
+    - Vmax_ref: velocidade máxima de referência.
+    - Km: constante de Michaelis-Menten.
+    - Ea: energia de ativação.
+    - R: constante universal dos gases.
+    - Tref: temperatura de referência.
     """
 
     Vmax_ref: float = 5.0      # mg/L.h
