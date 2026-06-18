@@ -7,8 +7,18 @@ from scipy.integrate import solve_ivp
 @dataclass
 class ParametrosBioreator:
     """
+    # Parâmetros do Biorreator
+
     Armazena os parâmetros do modelo de Michaelis-Menten
-    com dependência de temperatura via equação de Arrhenius.
+    com dependência de temperatura via Arrhenius.
+
+    ## Atributos
+
+    - **Vmax_ref**: velocidade máxima de referência.
+    - **Km**: constante de Michaelis-Menten.
+    - **Ea**: energia de ativação.
+    - **R**: constante universal dos gases.
+    - **Tref**: temperatura de referência.
     """
 
     Vmax_ref: float = 5.0      # mg/L.h
